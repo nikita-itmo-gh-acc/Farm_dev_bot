@@ -12,7 +12,6 @@ cursor = farm_dev_db.cursor()
 
 def create_db():
     global cursor
-    # cursor.execute("CREATE DATABASE IF NOT EXISTS FarmDB;")
     cursor.execute("USE sql7707767;")
     cursor.execute("CREATE TABLE IF NOT EXISTS Users ( \
                     id INTEGER PRIMARY KEY AUTO_INCREMENT, \
