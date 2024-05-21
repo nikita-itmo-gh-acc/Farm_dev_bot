@@ -40,5 +40,12 @@ def delete_db():
     cursor.execute("DROP DATABASE sql7707767;")
 
 
+def edit_db():
+    global cursor
+    cursor.execute("USE sql7707767;")
+    cursor.execute("ALTER TABLE Sellers ADD site_link VARCHAR(256);")
+
+
 if __name__ == "__main__":
+    # edit_db()
     create_db()
