@@ -17,8 +17,8 @@ def get_site_link(message, bot):
 
 def get_save_access(user_id, bot):
     keyboard = tb.types.InlineKeyboardMarkup()
-    key_save = tb.types.InlineKeyboardButton(text='Сохранить', callback_data='save')
-    key_delete = tb.types.InlineKeyboardButton(text='Забыть', callback_data='delete')
+    key_save = tb.types.InlineKeyboardButton(text='💾 Сохранить', callback_data='save')
+    key_delete = tb.types.InlineKeyboardButton(text='💁‍♂️ Забыть', callback_data='delete')
     keyboard.add(key_save, key_delete)
     question = 'Сохранить ваши данные?'
     bot.send_message(user_id, text=question, reply_markup=keyboard)
@@ -35,8 +35,8 @@ def callback_worker_link(call, bot):
 
 def site_link_choice(user_id, bot):
     keyboard = tb.types.InlineKeyboardMarkup()
-    key_remain = tb.types.InlineKeyboardButton(text='Да', callback_data='remain')
-    key_skip = tb.types.InlineKeyboardButton(text='Нет', callback_data='skip')
+    key_remain = tb.types.InlineKeyboardButton(text='✅ Да', callback_data='remain')
+    key_skip = tb.types.InlineKeyboardButton(text='❌ Нет', callback_data='skip')
     keyboard.add(key_remain, key_skip)
     question = 'Оставить ссылку на ваш сайт?'
     bot.send_message(user_id, text=question, reply_markup=keyboard)

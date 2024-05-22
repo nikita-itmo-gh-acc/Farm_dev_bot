@@ -2,6 +2,7 @@ import telebot as tb
 from db_create import create_db
 from bot_logic import *
 from reg_sellers import callback_worker_link
+from auth import menu, handle_choice
 
 farm_bot = tb.TeleBot('6813586303:AAHwBwwUL7AmCy5RFjkyJrUI49Tl-OkXpOk')
 
@@ -12,6 +13,7 @@ def main():
                                              call.data == "save" or call.data == "delete", pass_bot=True)
     farm_bot.register_callback_query_handler(callback_worker_link, func=lambda call:
                                              call.data == "remain" or call.data == "skip", pass_bot=True)
+    farm_bot.register_callback_query_handler(handle_choice, func=lambda call: call.data in menu.values(), pass_bot=True)
     farm_bot.polling(none_stop=True, interval=0)
 
 

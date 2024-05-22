@@ -42,10 +42,12 @@ def delete_db():
 
 def edit_db():
     global cursor
-    cursor.execute("USE sql7707767;")
-    cursor.execute("ALTER TABLE Sellers ADD site_link VARCHAR(256);")
+    cursor.execute("USE sql7707767")
+    cursor.execute("INSERT INTO Products (name, production_date, expiration_date, seller_id) \
+                   VALUES ('Milk', '2024-05-17', '2024-06-01', 5)")
+    farm_dev_db.commit()
 
 
 if __name__ == "__main__":
-    # edit_db()
-    create_db()
+    edit_db()
+    # create_db()
